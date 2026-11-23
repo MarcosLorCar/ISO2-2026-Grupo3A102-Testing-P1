@@ -5,7 +5,9 @@ completely before doing anything. The reasons behind each rule are in [DECISIONS
 
 ## The project
 Problem 1 (*Parking*, ET.02.02) of the second theoretical exercise (T2) and second part of the lab project of
-Software Engineering II (UCLM, 2026/27), group 3A1.02.
+Software Engineering II (UCLM, 2026/27), group 3A1.02. The program calculates the total cost of a parking stay from
+two date/time objects (entry and exit): the first 30 minutes are free, then €0.05 per minute, capped at a €20 daily
+maximum.
 
 The three pairs of the group work on this problem in sequence, so nobody tests their own code:
 
@@ -49,7 +51,7 @@ A question that does not change any file does not need a plan.
 2. **Only your task, and no work without an issue.** One task is one issue, one branch and one agent per session
    (D-006). Do not start anything that has no issue. Change only what your task needs: do not
    refactor, rename or "improve" anything else; write it in the plan as an open question instead.
-3. **Only ET.02.02.** Do not add parking categories, rules or inputs that the statement does not name.
+3. **Only ET.02.02.** Do not add tariffs, discounts, rules or inputs that the statement does not name.
 4. **The specification is the statement plus table Q of the README.** The code follows them. If they disagree or leave
    a gap, stop and ask (cycle step 2).
 5. **Keep it simple.** The smallest code that meets the specification: no extra features and no overengineering. The
