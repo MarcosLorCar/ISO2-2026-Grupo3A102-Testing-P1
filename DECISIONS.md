@@ -148,3 +148,18 @@ only what applies to a small program without use cases or iterations.
 - **Reason:** The board shows at any moment who is working on each task, and an agent cannot start on work that is someone else's.
 - **Consequences:** Extends rule 15 of AGENTS.md and D-006. Step 1 of the cycle in AGENTS.md is updated accordingly.
 - **Status:** Proposed by Marcos on 23/11/2026; pending the approval of Ignacio in the review of the pull request that adds this file.
+
+## D-012 · Follow SOLID principles to facilitate testing (Steps 2 and 3)
+**Date:** 23/11/2026 · **Step:** 1 · **Issue:** [#8](https://github.com/MarcosLorCar/ISO2-2026-Grupo3A102-Testing-P1/issues/8)
+
+- **Context:** Statement ET.02.00 (p. 2) explicitly states that Step 1 has no assessment of its own, but its code quality decides the effort of Steps 2 and 3, and encourages implementing code that is easy to test *"by following the SOLID principles we reviewed in practical session 0"* (also recorded in main repository issue [#156](https://github.com/igrt08-uclm/2026-ISO2-3A1.02/issues/156)).
+- **Decision:** The Step 1 implementation follows the SOLID principles pragmatically, without overengineering:
+  - **Single Responsibility Principle (SRP):** input data and constructor validation, fee calculation logic, and console I/O (`es.uclm.iso2.parking.ui`) live in separate cohesive classes, each with one clear responsibility.
+  - **Open/Closed Principle (OCP):** rule parameters (free minutes, per-minute rate, daily cap, minutes per day) are named constants and calculation logic is cleanly structured so rules can be extended or adjusted without scattering magic numbers.
+  - **Liskov Substitution Principle (LSP):** any subtype or interface implementation honours the exact contract (preconditions, return values and exceptions) of its supertype.
+  - **Interface Segregation Principle (ISP):** public classes and methods expose small, focused signatures with no unused parameters or bloated APIs.
+  - **Dependency Inversion Principle (DIP):** domain classes never depend on console I/O (`System.in`/`System.out`) or concrete infrastructure; the UI depends on the domain, and console I/O streams can be injected so UI classes are also unit-testable in Step 3.
+- **Alternatives:** Ignoring SOLID and putting all logic in a single procedural class, or overengineering with unnecessary frameworks/factories that make Step 2 (pseudocode, MC/DC) and Step 3 harder.
+- **Reason:** Cohesive, decoupled classes with clean constructors and injected I/O make test units obvious for Pair 2 (Step 2) and straightforward to cover above 80 % in JUnit for Pair 3 (Step 3).
+- **Consequences:** Extends D-003 and D-008; rule 5 of AGENTS.md references D-012.
+- **Status:** Proposed by Marcos on 23/11/2026; pending the approval of Ignacio in the review of the pull request that adds this decision.
