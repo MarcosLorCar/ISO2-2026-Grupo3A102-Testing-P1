@@ -54,8 +54,9 @@ A question that does not change any file does not need a plan.
 3. **Only ET.02.02.** Do not add tariffs, discounts, rules or inputs that the statement does not name.
 4. **The specification is the statement plus table Q of the README.** The code follows them. If they disagree or leave
    a gap, stop and ask (cycle step 2).
-5. **Keep it simple.** The smallest code that meets the specification: no extra features and no overengineering. The
-   simpler the program, the easier it is to test.
+5. **Keep it simple and follow SOLID (D-012).** The smallest cohesive code that meets the specification and applies
+   the SOLID principles (ET.02.00, practical session 0): no extra features and no overengineering. The simpler and
+   better decoupled the program, the easier it is to test in Steps 2 and 3.
 6. **No new dependencies, frameworks or tools.** Only JUnit, Surefire and JaCoCo, as the statement says.
 7. **Branches.** Work only on the branch of your task: `feature/short-description` in Step 1, and `hotfix/short-description`
    created from `develop` in Step 3. A member creates it on GitHub from the issue: never create, rename or delete a
