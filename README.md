@@ -70,7 +70,7 @@ You design the tests from this README and the code of `develop`, and deliver `IS
 (all the sections required in ET.02.00 and TW.02.01).
 
 - **Limits:** every limit is a named constant in the domain code (free minutes `30`, rate `5` cents/min, daily cap `2000` cents, minutes per day `1440`), so boundary values come directly from them.
-- **Methods to test:** *to be completed in T2 ([#3](https://github.com/MarcosLorCar/ISO2-2026-Grupo3A102-Testing-P1/issues/3)).*
+- **Methods to test:** `ParkingStay(LocalDateTime, LocalDateTime)` (validation, Q3 and Q5), `ParkingStay.calculateFeeCents()` (the whole rule from entry and exit) and `ParkingFeeCalculator.calculateFeeCents(long)` (the fee rules from a duration in minutes). The boundary values come from the public constants `ParkingFeeCalculator.FREE_MINUTES`, `CENTS_PER_MINUTE`, `DAILY_CAP_CENTS` and `MINUTES_PER_DAY`.
 
 ## For Pair 3 – JUnit tests (Step 3)
 
