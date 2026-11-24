@@ -32,6 +32,17 @@ mvn verify
 > Until Step 3 the coverage check only shows a warning (`haltOnFailure` is `false` in `pom.xml`), because the program
 > is written before its tests. Pair 3 sets `haltOnFailure` to `true` in Step 3 (D-004).
 
+## Run the program
+
+Compile the project and start the interactive console interface:
+
+```bash
+mvn compile
+java -cp target/classes es.uclm.iso2.parking.ui.Main
+```
+
+Enter entry and exit date/times using `yyyy-MM-dd HH:mm` or `yyyy-MM-dd HH:mm:ss` (for example, `2026-11-24 10:00` and `2026-11-24 10:30:15`). Invalid formats or invalid stays show an error message and re-prompt. Type `exit` at any prompt to quit.
+
 ## Structure
 
 | Package | Content |
